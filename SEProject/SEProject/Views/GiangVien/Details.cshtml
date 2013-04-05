@@ -1,0 +1,43 @@
+﻿@model SEProject.Models.GiangVien
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>GiangVien</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.hoTen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hoTen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.chucDanh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.chucDanh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.chuyenNganh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.chuyenNganh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.donVi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.donVi)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,85 @@
+﻿@model SEProject.Models.MonHoc
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MonHoc</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maMonHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maMonHoc)
+            @Html.ValidationMessageFor(model => model.maMonHoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tenMonHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tenMonHoc)
+            @Html.ValidationMessageFor(model => model.tenMonHoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.soTinChi)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.soTinChi)
+            @Html.ValidationMessageFor(model => model.soTinChi)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gioLyThuyet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gioLyThuyet)
+            @Html.ValidationMessageFor(model => model.gioLyThuyet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gioThucHanh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gioThucHanh)
+            @Html.ValidationMessageFor(model => model.gioThucHanh)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gioTuHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gioTuHoc)
+            @Html.ValidationMessageFor(model => model.gioTuHoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maMonKienQuyet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maMonKienQuyet)
+            @Html.ValidationMessageFor(model => model.maMonKienQuyet)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

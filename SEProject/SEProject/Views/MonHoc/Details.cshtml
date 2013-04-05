@@ -1,0 +1,64 @@
+﻿@model SEProject.Models.MonHoc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MonHoc</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.maMonHoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.maMonHoc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tenMonHoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tenMonHoc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.soTinChi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.soTinChi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gioLyThuyet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gioLyThuyet)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gioThucHanh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gioThucHanh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gioTuHoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gioTuHoc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.maMonKienQuyet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.maMonKienQuyet)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

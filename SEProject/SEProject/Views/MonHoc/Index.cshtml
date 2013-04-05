@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SEProject.Models.MonHoc>
+
+@{
+    ViewBag.Title = "Danh sách môn học";
+}
+
+<h2>Danh sách môn học</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table align="center" cellspacing="10" border="1">
+    <tr>
+        <th>
+            Mã môn học
+        </th>
+        <th width="25%">
+            Tên môn học
+        </th>
+        <th>
+            Số tín chỉ
+        </th>
+        <th width="30%">
+            Mã môn học kiên quyết
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.maMonHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenMonHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soTinChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maMonKienQuyet)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,16 +1,16 @@
 ﻿@model SEProject.Models.GiangVien
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Chỉnh sửa";
 }
 
-<h2>Edit</h2>
+<h2>Chỉnh sửa</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>GiangVien</legend>
+        <legend>Giảng Viên</legend>
 
         @Html.HiddenFor(model => model.Id)
 

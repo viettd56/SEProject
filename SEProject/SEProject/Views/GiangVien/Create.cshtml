@@ -1,16 +1,16 @@
 ﻿@model SEProject.Models.GiangVien
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Tạo mới";
 }
 
-<h2>Create</h2>
+<h2>Tạo mới</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>GiangVien</legend>
+        <legend>Giảng Viên</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.hoTen)

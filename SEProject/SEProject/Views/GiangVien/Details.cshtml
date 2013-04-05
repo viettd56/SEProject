@@ -1,13 +1,13 @@
 ﻿@model SEProject.Models.GiangVien
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Thông tin";
 }
 
-<h2>Details</h2>
+<h2>Thông tin</h2>
 
 <fieldset>
-    <legend>GiangVien</legend>
+    <legend>Giảng Viên</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.hoTen)
@@ -38,6 +38,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

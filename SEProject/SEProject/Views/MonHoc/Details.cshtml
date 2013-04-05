@@ -9,56 +9,56 @@
 <fieldset>
     <legend>MonHoc</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.maMonHoc)
+    <div class="editor-label">
+         <h4>Mã môn học</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.maMonHoc)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.tenMonHoc)
+    <div class="editor-label">
+         <h4>Tên môn học</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.tenMonHoc)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.soTinChi)
+    <div class="editor-label">
+         <h4>Số tín chỉ</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.soTinChi)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.gioLyThuyet)
+    <div class="editor-label">
+         <h4>Giờ lý thuyết</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.gioLyThuyet)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.gioThucHanh)
+    <div class="editor-label">
+         <h4>Giờ thực hành</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.gioThucHanh)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.gioTuHoc)
+    <div class="editor-label">
+        <h4>Giờ tự học</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.gioTuHoc)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.maMonKienQuyet)
+    <div class="editor-label">
+         <h4>Mã môn học tiên quyết</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.maMonKienQuyet)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

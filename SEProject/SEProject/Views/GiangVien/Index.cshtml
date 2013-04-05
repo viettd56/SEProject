@@ -1,27 +1,27 @@
 ﻿@model IEnumerable<SEProject.Models.GiangVien>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Giảng viên";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
-<table>
+<table align="center" cellspacing="10">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.hoTen)
+        <th width="15%">
+            Họ tên
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.chucDanh)
+        <th width="10%">
+            Chức danh
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.chuyenNganh)
+        <th width="25%">
+            Chuyên ngành
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.donVi)
+        <th width="20%">
+            Đơn vị
         </th>
         <th></th>
     </tr>

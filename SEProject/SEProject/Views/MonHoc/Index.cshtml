@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Tạo mới", "Create")
 </p>
-<table align="center" cellspacing="10">
+<table align="center" cellspacing="10" border="1">
     <tr>
         <th>
             Mã môn học
@@ -21,7 +21,7 @@
             Số tín chỉ
         </th>
         <th width="30%">
-            Mã môn học kiên quyết
+            Mã môn học tiên quyết
         </th>
         <th></th>
     </tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.maMonKienQuyet)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Thông tin", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

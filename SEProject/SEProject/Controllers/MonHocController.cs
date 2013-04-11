@@ -116,5 +116,17 @@ namespace SEProject.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+        public ActionResult SearchMonHoc(string searchmh) 
+        {           
+            var monhocs = from m in db.monHocs 
+                        select m; 
+ 
+            if (!String.IsNullOrEmpty(searchmh)) 
+            { 
+                monhocs = monhocs.Where(s => s.tenMonHoc.Contains(searchmh)); 
+            } 
+ 
+            return View(monhocs);
+        }
     }
 }

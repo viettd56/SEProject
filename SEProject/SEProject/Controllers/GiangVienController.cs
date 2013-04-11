@@ -116,5 +116,31 @@ namespace SEProject.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public ActionResult SearchGiangVien(string searchgv, string nganh)
+        {
+            var dsnganh = new List<string>();
+
+            var nganhQry = from d in db.giangViens
+                           orderby d.chuyenNganh
+                           select d.chuyenNganh;
+            dsnganh.AddRange(nganhQry.Distinct());
+            ViewBag.chuyenNganh = new SelectList(dsnganh);
+
+            var giangviens = from m in db.giangViens
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchgv))
+            {
+                giangviens = giangviens.Where(s => s.hoTen.Contains(searchgv));
+            }
+
+            if (string.IsNullOrEmpty(nganh))
+                return View(giangviens);
+            else
+            {
+                return View(giangviens.Where(x => x.chuyenNganh == nganh));
+            } 
+        }
     }
 }

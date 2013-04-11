@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1ACEB867-2C7C-409C-B06D-7E19B487969A}</ProjectGuid>
+    <ProjectGuid>{158D4F18-CAF1-44CB-8F82-D92BACEE7149}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -325,6 +325,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\GiangVien\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MonHoc\SearchMonHoc.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GiangVien\SearchGiangVien.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

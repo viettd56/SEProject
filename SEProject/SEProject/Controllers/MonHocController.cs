@@ -123,7 +123,7 @@ namespace SEProject.Controllers
  
             if (!String.IsNullOrEmpty(searchmh)) 
             { 
-                monhocs = monhocs.Where(s => s.tenMonHoc.Contains(searchmh)); 
+                monhocs = monhocs.Where(s => s.tenMonHoc.Contains(searchmh) || s.maMonHoc.Contains(searchmh)); 
             } 
  
             return View(monhocs);

@@ -14,7 +14,24 @@ namespace SEProject.Models
         public string chuyenNganh { get; set; }
         public string donVi { get; set; }
 
+        public GiangVien()
+        {
+
+        }
+
+        public GiangVien(int id, string hoten, string chucdanh, string chuyennganh, string donvi)
+        {
+            Id = id;
+            hoTen = hoten;
+            chucDanh = chucdanh;
+            chuyenNganh = chuyennganh;
+            donVi = donvi;
+        }
+
     }
+
+    
+
 
     public class GiangVienDBContext : DbContext
     {

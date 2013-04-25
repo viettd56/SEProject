@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{158D4F18-CAF1-44CB-8F82-D92BACEE7149}</ProjectGuid>
+    <ProjectGuid>{1ACEB867-2C7C-409C-B06D-7E19B487969A}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -166,6 +166,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DaoTaoController.cs" />
     <Compile Include="Controllers\GiangVienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MonHocController.cs" />
@@ -174,6 +175,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DaoTao.cs" />
     <Compile Include="Models\GiangVien.cs" />
     <Compile Include="Models\MonHoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -331,6 +333,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\GiangVien\SearchGiangVien.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DaoTao\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DaoTao\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DaoTao\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DaoTao\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DaoTao\Delete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

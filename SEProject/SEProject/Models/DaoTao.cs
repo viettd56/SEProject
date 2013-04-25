@@ -11,7 +11,21 @@ namespace SEProject.Models
         public int ID { get; set; }
         public string tenMonHoc { get; set; }
         public string tenGiangVien { get; set; }
+
+        public DaoTao()
+        {
+            tenGiangVien = "";
+            tenMonHoc = "";
+        }
+
+        public DaoTao(string tenMH, string tenGV)
+        {
+            tenMonHoc = tenMH;
+            tenGiangVien = tenGV;
+        }
     }
+
+
 
     public class DaoTaoDBContext : DbContext
     {

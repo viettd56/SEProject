@@ -7,6 +7,7 @@
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -15,18 +16,14 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.tenMonHoc)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.tenMonHoc)
-            @Html.ValidationMessageFor(model => model.tenMonHoc)
-        </div>
+        <p>@Html.DropDownList("tenMonHoc", (SelectList)ViewBag.listMonHoc , "All")</p>
+
 
         <div class="editor-label">
             @Html.LabelFor(model => model.tenGiangVien)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.tenGiangVien)
-            @Html.ValidationMessageFor(model => model.tenGiangVien)
-        </div>
+        <p>@Html.DropDownList("tenGiangVien",(SelectList)ViewBag.listGiangVien, "All")</p>
+
 
         <p>
             <input type="submit" value="Create" />

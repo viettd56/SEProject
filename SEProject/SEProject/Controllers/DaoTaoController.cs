@@ -78,6 +78,18 @@ namespace SEProject.Controllers
             return View(dT);
         }
 
+        public ActionResult Create(DaoTao dT)
+        {
+            if (ModelState.IsValid)
+            {
+                db.daoTaos.Add(dT);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(dT);
+        }
+
         //
         // GET: /DaoTao/Edit/5
 

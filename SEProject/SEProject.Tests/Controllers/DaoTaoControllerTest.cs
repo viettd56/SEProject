@@ -8,24 +8,69 @@ using Assert = NUnit.Framework.Assert;
 namespace SEProject.Tests.Controllers
 {
     [TestClass]
-    public class DaoTaoControlerTest
+    public class DaoTaoControllerTest
     {
-        int ID = 10;
-        string tenGiangVien = "test";
-        string tenMonHoc = "test";
+        int id = 100;
+        string nameMonHoc = "MonHoc";
+        string nameGiangVien = "GiangVien";
 
         [TestMethod]
-        public void TestCreatDaoTao()
+        public void TestCreateDaoTao()
         {
-            var daoTao = new DaoTao(tenMonHoc, tenGiangVien);
-            var _daoTaoControler = new DaoTaoController();
-            var result = _daoTaoControler.Create(tenMonHoc, tenGiangVien) as RedirectToRouteResult;
-            //Them
-            Assert.NotNull(result);
-            Assert.AreEqual("Index",result.RouteValues["action"]);
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            dt.ID = id;
+            var daoTaoControl = new DaoTaoController();
+            var result = daoTaoControl.Create(dt) as RedirectToRouteResult;
 
-            _daoTaoControler.Delete(daoTao.ID);
-            //Xoa
+            Assert.NotNull(result);
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+
+            daoTaoControl.Delete(id);
+        }
+
+        [TestMethod]
+        public void TestDeleteDaoTao()
+        {
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            dt.ID = id;
+            var daoTaoControl = new DaoTaoController();
+            daoTaoControl.Create(dt);
+
+            var result2 = daoTaoControl.Delete(dt.ID) as ViewResult;
+            var dTao = (DaoTao)result2.ViewData.Model;
+
+            Assert.NotNull(result2);
+            Assert.AreEqual(nameMonHoc, dTao.tenMonHoc);
+        }
+
+        [TestMethod]
+        public void TestDetailDaoTao()
+        {
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            dt.ID = id;
+            var daoTaoControl = new DaoTaoController();
+            daoTaoControl.Create(dt);
+            var result = daoTaoControl.Details(dt.ID) as ViewResult;
+            var dTao = (DaoTao)result.ViewData.Model;
+
+            Assert.AreEqual(nameMonHoc, dTao.tenMonHoc);
+
+            daoTaoControl.Delete(id);
+        }
+
+        [TestMethod]
+        public void TestEditDaoTao()
+        {
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            dt.ID = id;
+            var daoTaoControl = new DaoTaoController();
+            daoTaoControl.Create(dt);
+            var result = daoTaoControl.Edit(dt.ID) as ViewResult;
+            var dTao = (DaoTao)result.ViewData.Model;
+
+            Assert.AreEqual(nameMonHoc, dTao.tenMonHoc);
+
+            daoTaoControl.Delete(id);
         }
     }
 }

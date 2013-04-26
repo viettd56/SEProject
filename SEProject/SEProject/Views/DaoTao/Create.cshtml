@@ -1,10 +1,10 @@
 ﻿@model SEProject.Models.DaoTao
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Tạo mới";
 }
 
-<h2>Create</h2>
+<h2>Tạo mới</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -14,25 +14,25 @@
         <legend>DaoTao</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.tenMonHoc)
+            <h4>Môn học</h4>
         </div>
         <p>@Html.DropDownList("tenMonHoc", (SelectList)ViewBag.listMonHoc , "All")</p>
 
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.tenGiangVien)
+           <h4>Giảng viên</h4>
         </div>
         <p>@Html.DropDownList("tenGiangVien",(SelectList)ViewBag.listGiangVien, "All")</p>
 
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Tạo" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay lại danh sách", "Index")
 </div>
 
 @section Scripts {

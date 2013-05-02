@@ -78,7 +78,7 @@ namespace SEProject.Controllers
             return View(dT);
         }
 
-        public ActionResult Create(DaoTao dT)
+        public ActionResult _Create(DaoTao dT)
         {
             if (ModelState.IsValid)
             {

@@ -20,9 +20,7 @@ namespace SEProject.Tests.Controllers
         public void TestCreateGiangVien()
         {
             //Test chuc nang them giang vien vao database
-
             var giangVien = new GiangVien( _id, hoTen, chucDanh, chuyenNganh, donVi);
-
 
             var _giangVienController = new GiangVienController();
             var result = _giangVienController.Create(giangVien) as RedirectToRouteResult;
@@ -32,7 +30,6 @@ namespace SEProject.Tests.Controllers
 
             _giangVienController.Delete(giangVien.Id);
             //Xoa giang vien da them
-
         }
 
         [TestMethod]
@@ -40,9 +37,7 @@ namespace SEProject.Tests.Controllers
         public void TestDeleteGiangVien()
         {
             //Test chuc nang xoa giang vien khoi database
-
             var giangVien = new GiangVien(_id, hoTen, chucDanh, chuyenNganh, donVi);
-
 
             var _giangVienController = new GiangVienController();
             _giangVienController.Create(giangVien);
@@ -57,7 +52,6 @@ namespace SEProject.Tests.Controllers
         {
             var giangVien = new GiangVien(_id, hoTen, chucDanh, chuyenNganh, donVi);
 
-
             var _giangVienController = new GiangVienController();
             _giangVienController.Create(giangVien);
             var result = _giangVienController.Details(giangVien.Id) as ViewResult;
@@ -71,7 +65,6 @@ namespace SEProject.Tests.Controllers
         {
             var giangVien = new GiangVien(_id, hoTen, chucDanh, chuyenNganh, donVi);
 
-
             var _giangVienController = new GiangVienController();
             _giangVienController.Create(giangVien);
             var result = _giangVienController.Edit(giangVien.Id) as ViewResult;
@@ -84,7 +77,6 @@ namespace SEProject.Tests.Controllers
         public void TestSearchGiangVien()
         {
             var giangVien = new GiangVien(_id, hoTen, chucDanh, chuyenNganh, donVi);
-
 
             var _giangVienController = new GiangVienController();
             _giangVienController.Create(giangVien);

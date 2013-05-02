@@ -22,10 +22,8 @@ namespace SEProject.Tests.Controllers
         [TestMethod]
         public void TestCreateMonHoc()
         {
-            //Test chuc nang them mon hoc vao database
-           
-            var monHoc = new MonHoc(id, maMH, tenMH, soTC, soGLT, soGTH, soGT, "");
-            
+            //Test chuc nang them mon hoc vao database           
+            var monHoc = new MonHoc(id, maMH, tenMH, soTC, soGLT, soGTH, soGT, "");            
 
             var _monHocController = new MonHocController();
             var result = _monHocController.Create(monHoc) as RedirectToRouteResult;
@@ -35,7 +33,6 @@ namespace SEProject.Tests.Controllers
 
             _monHocController.Delete(monHoc.Id);
             //Xoa mon hoc da them
-
             }
 
         [TestMethod]
@@ -43,7 +40,6 @@ namespace SEProject.Tests.Controllers
         public void TestDeleteMonHoc()
         {
             //Test chuc nang xoa Mon hoc khoi database
-
             var _monHocController = new MonHocController();
             var monHoc = new MonHoc(id, maMH, tenMH, soTC, soGLT, soGTH, soGT, "");
             _monHocController.Create(monHoc);

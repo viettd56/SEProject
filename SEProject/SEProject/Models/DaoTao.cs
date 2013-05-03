@@ -22,7 +22,7 @@ namespace SEProject.Models
             nganhHoc = "";
         }
 
-        public DaoTao(string tenMH, string tenGV, string khoa, string nganh)
+        public DaoTao(string tenMH, string tenGV, string khoa = "", string nganh = "")
         {
             tenMonHoc = tenMH;
             tenGiangVien = tenGV;

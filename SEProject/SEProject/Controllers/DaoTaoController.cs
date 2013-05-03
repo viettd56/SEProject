@@ -12,8 +12,6 @@ namespace SEProject.Controllers
     public class DaoTaoController : Controller
     {
         private DaoTaoDBContext db = new DaoTaoDBContext();
-        private MonHocDBContext dbMH = new MonHocDBContext();
-        private GiangVienDBContext dbGV = new GiangVienDBContext();
 
         //
         // GET: /DaoTao/
@@ -41,22 +39,6 @@ namespace SEProject.Controllers
 
         public ActionResult Create()
         {
-            var dsMonHoc = new List<string>();
-
-            var monHocQry = from dM in dbMH.monHocs
-                            orderby dM.tenMonHoc
-                            select dM.tenMonHoc;
-            dsMonHoc.AddRange(monHocQry.Distinct());
-            ViewBag.listMonHoc = new SelectList(dsMonHoc);
-
-            var dsGiangVien = new List<string>();
-
-            var giangVienQry = from dG in dbGV.giangViens
-                               orderby dG.hoTen
-                               select dG.hoTen;
-            dsGiangVien.AddRange(giangVienQry.Distinct());
-            ViewBag.listGiangVien = new SelectList(dsGiangVien);
-
             return View();
         }
 
@@ -65,29 +47,16 @@ namespace SEProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string tenMonHoc, string tenGiangVien)
+        public ActionResult Create(DaoTao daotao)
         {
-            DaoTao dT = new DaoTao(tenMonHoc, tenGiangVien);
             if (ModelState.IsValid)
             {
-                db.daoTaos.Add(dT);
+                db.daoTaos.Add(daotao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(dT);
-        }
-
-        public ActionResult _Create(DaoTao dT)
-        {
-            if (ModelState.IsValid)
-            {
-                db.daoTaos.Add(dT);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(dT);
+            return View(daotao);
         }
 
         //

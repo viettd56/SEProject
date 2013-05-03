@@ -343,6 +343,11 @@
     <Content Include="Views\GiangVien\SearchGiangVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201305021616565_Initial.resx">
+      <DependentUpon>201305021616565_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\DaoTao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -356,11 +361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DaoTao\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201305021616565_Initial.resx">
-      <DependentUpon>201305021616565_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

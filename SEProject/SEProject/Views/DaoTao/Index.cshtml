@@ -7,15 +7,21 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Tạo mới", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table>
-    <tr align ="center">
+    <tr>
         <th>
-           <h4>Tên môn học</h4>
+            @Html.DisplayNameFor(model => model.tenMonHoc)
         </th>
         <th>
-            <h4>Tên giảng viên</h4>
+            @Html.DisplayNameFor(model => model.tenGiangVien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.khoaHoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nganhHoc)
         </th>
         <th></th>
     </tr>
@@ -29,9 +35,15 @@
             @Html.DisplayFor(modelItem => item.tenGiangVien)
         </td>
         <td>
-            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.khoaHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nganhHoc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>
 }

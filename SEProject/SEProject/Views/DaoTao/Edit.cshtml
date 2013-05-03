@@ -1,10 +1,10 @@
 ﻿@model SEProject.Models.DaoTao
 
 @{
-    ViewBag.Title = "Chỉnh sửa";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Chỉnh sửa</h2>
+<h2>Edit</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -16,7 +16,7 @@
         @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
-            <h4>Tên môn học</h4>
+            @Html.LabelFor(model => model.tenMonHoc)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.tenMonHoc)
@@ -24,21 +24,37 @@
         </div>
 
         <div class="editor-label">
-            <h4>Tên giảng viên</h4>
+            @Html.LabelFor(model => model.tenGiangVien)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.tenGiangVien)
             @Html.ValidationMessageFor(model => model.tenGiangVien)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.khoaHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.khoaHoc)
+            @Html.ValidationMessageFor(model => model.khoaHoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nganhHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nganhHoc)
+            @Html.ValidationMessageFor(model => model.nganhHoc)
+        </div>
+
         <p>
-            <input type="submit" value="Lưu lại" />
+            <input type="submit" value="Save" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Quay lại danh sách", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

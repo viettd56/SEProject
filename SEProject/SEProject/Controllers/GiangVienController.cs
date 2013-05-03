@@ -117,6 +117,7 @@ namespace SEProject.Controllers
             base.Dispose(disposing);
         }
 
+        //Tim kiem giang vien theo ten giang vien va nganh
         public ActionResult SearchGiangVien(string searchgv, string nganh)
         {
             var dsnganh = new List<string>();

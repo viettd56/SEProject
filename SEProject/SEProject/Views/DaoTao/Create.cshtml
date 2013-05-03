@@ -1,10 +1,10 @@
 ﻿@model SEProject.Models.DaoTao
 
 @{
-    ViewBag.Title = "Tạo mới";
+    ViewBag.Title = "Create";
 }
 
-<h2>Tạo mới</h2>
+<h2>Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -14,25 +14,45 @@
         <legend>DaoTao</legend>
 
         <div class="editor-label">
-            <h4>Môn học</h4>
+            @Html.LabelFor(model => model.tenMonHoc)
         </div>
-        <p>@Html.DropDownList("tenMonHoc", (SelectList)ViewBag.listMonHoc , "All")</p>
-
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tenMonHoc)
+            @Html.ValidationMessageFor(model => model.tenMonHoc)
+        </div>
 
         <div class="editor-label">
-           <h4>Giảng viên</h4>
+            @Html.LabelFor(model => model.tenGiangVien)
         </div>
-        <p>@Html.DropDownList("tenGiangVien",(SelectList)ViewBag.listGiangVien, "All")</p>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tenGiangVien)
+            @Html.ValidationMessageFor(model => model.tenGiangVien)
+        </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.khoaHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.khoaHoc)
+            @Html.ValidationMessageFor(model => model.khoaHoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nganhHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nganhHoc)
+            @Html.ValidationMessageFor(model => model.nganhHoc)
+        </div>
 
         <p>
-            <input type="submit" value="Tạo" />
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Quay lại danh sách", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

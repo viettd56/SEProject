@@ -116,6 +116,8 @@ namespace SEProject.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        //Tim kiem mon hoc theo ten mon hoc
         public ActionResult SearchMonHoc(string searchmh) 
         {           
             var monhocs = from m in db.monHocs 

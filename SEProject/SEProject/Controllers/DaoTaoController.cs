@@ -12,6 +12,8 @@ namespace SEProject.Controllers
     public class DaoTaoController : Controller
     {
         private DaoTaoDBContext db = new DaoTaoDBContext();
+        private MonHocDBContext dbMH = new MonHocDBContext();
+        private GiangVienDBContext dbGV = new GiangVienDBContext();
 
         //
         // GET: /DaoTao/
@@ -39,6 +41,31 @@ namespace SEProject.Controllers
 
         public ActionResult Create()
         {
+            var dsMonHoc = new List<string>();
+
+            var monHocQry = from dM in dbMH.monHocs
+                            orderby dM.tenMonHoc
+                            select dM.tenMonHoc;
+            dsMonHoc.AddRange(monHocQry.Distinct());
+            ViewBag.listMonHoc = new SelectList(dsMonHoc);
+
+            var dsGiangVien = new List<string>();
+
+            var giangVienQry = from dG in dbGV.giangViens
+                               orderby dG.hoTen
+                               select dG.hoTen;
+            dsGiangVien.AddRange(giangVienQry.Distinct());
+            ViewBag.listGiangVien = new SelectList(dsGiangVien);
+
+            var dsNganhHoc = new List<string>();
+
+            dsNganhHoc.Add("Công nghệ thông tin");
+            dsNganhHoc.Add("Công nghệ thông tin CLC");
+            dsNganhHoc.Add("Hệ thống thông tin");
+            dsNganhHoc.Add("Mạng máy tính");
+            
+            ViewBag.listNganhHoc = new SelectList(dsNganhHoc);
+
             return View();
         }
 
@@ -47,8 +74,9 @@ namespace SEProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DaoTao daotao)
+        public ActionResult Create(string tenMonHoc, string tenGiangVien, int khoaHoc, string nganhHoc)
         {
+            var daotao = new DaoTao(tenMonHoc, tenGiangVien, khoaHoc, nganhHoc);
             if (ModelState.IsValid)
             {
                 db.daoTaos.Add(daotao);
@@ -59,6 +87,17 @@ namespace SEProject.Controllers
             return View(daotao);
         }
 
+        public ActionResult _Create(DaoTao dT)
+        {
+            if (ModelState.IsValid)
+            {
+                db.daoTaos.Add(dT);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(dT);
+        }
         //
         // GET: /DaoTao/Edit/5
 

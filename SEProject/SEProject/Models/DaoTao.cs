@@ -11,18 +11,18 @@ namespace SEProject.Models
         public int ID { get; set; }
         public string tenMonHoc { get; set; }
         public string tenGiangVien { get; set; }
-        public string khoaHoc { get; set; }
+        public int khoaHoc { get; set; }
         public string nganhHoc { get; set; }
 
         public DaoTao()
         {
             tenGiangVien = "";
             tenMonHoc = "";
-            khoaHoc = "";
+            khoaHoc = 0;
             nganhHoc = "";
         }
 
-        public DaoTao(string tenMH, string tenGV, string khoa = "", string nganh = "")
+        public DaoTao(string tenMH, string tenGV, int khoa = 0, string nganh = "")
         {
             tenMonHoc = tenMH;
             tenGiangVien = tenGV;

@@ -40,9 +40,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -177,11 +174,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201305021616565_Initial.cs" />
-    <Compile Include="Migrations\201305021616565_Initial.Designer.cs">
-      <DependentUpon>201305021616565_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DaoTao.cs" />
     <Compile Include="Models\GiangVien.cs" />
@@ -341,11 +333,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\GiangVien\SearchGiangVien.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201305021616565_Initial.resx">
-      <DependentUpon>201305021616565_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DaoTao\Index.cshtml" />

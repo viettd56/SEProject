@@ -13,14 +13,16 @@ namespace SEProject.Tests.Controllers
         int id = 100;
         string nameMonHoc = "MonHoc";
         string nameGiangVien = "GiangVien";
+        int khoa = 2013;
+        string nganh = "CNTT";
 
         [TestMethod]
         public void TestCreateDaoTao()
         {
-            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien, khoa, nganh);
             dt.ID = id;
             var daoTaoControl = new DaoTaoController();
-            var result = daoTaoControl.Create(dt) as RedirectToRouteResult;
+            var result = daoTaoControl._Create(dt) as RedirectToRouteResult;
 
             Assert.NotNull(result);
             Assert.AreEqual("Index", result.RouteValues["action"]);
@@ -31,10 +33,10 @@ namespace SEProject.Tests.Controllers
         [TestMethod]
         public void TestDeleteDaoTao()
         {
-            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien, khoa, nganh);
             dt.ID = id;
             var daoTaoControl = new DaoTaoController();
-            daoTaoControl.Create(dt);
+            daoTaoControl._Create(dt);
 
             var result2 = daoTaoControl.Delete(dt.ID) as ViewResult;
             var dTao = (DaoTao)result2.ViewData.Model;
@@ -46,10 +48,10 @@ namespace SEProject.Tests.Controllers
         [TestMethod]
         public void TestDetailDaoTao()
         {
-            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien, khoa, nganh);
             dt.ID = id;
             var daoTaoControl = new DaoTaoController();
-            daoTaoControl.Create(dt);
+            daoTaoControl._Create(dt);
             var result = daoTaoControl.Details(dt.ID) as ViewResult;
             var dTao = (DaoTao)result.ViewData.Model;
 
@@ -61,10 +63,10 @@ namespace SEProject.Tests.Controllers
         [TestMethod]
         public void TestEditDaoTao()
         {
-            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien);
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien, khoa, nganh);
             dt.ID = id;
             var daoTaoControl = new DaoTaoController();
-            daoTaoControl.Create(dt);
+            daoTaoControl._Create(dt);
             var result = daoTaoControl.Edit(dt.ID) as ViewResult;
             var dTao = (DaoTao)result.ViewData.Model;
 

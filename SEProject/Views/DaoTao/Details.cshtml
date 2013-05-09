@@ -1,0 +1,43 @@
+﻿@model SEProject.Models.DaoTao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DaoTao</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tenMonHoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tenMonHoc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tenGiangVien)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tenGiangVien)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.khoaHoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.khoaHoc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nganhHoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nganhHoc)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

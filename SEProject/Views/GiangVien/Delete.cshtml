@@ -1,0 +1,46 @@
+﻿@model SEProject.Models.GiangVien
+
+@{
+    ViewBag.Title = "Xóa";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa thông tin giảng viên ?</h3>
+<fieldset>
+    <legend>Giảng viên</legend>
+
+    <div class="editor-label">
+         <h4>Họ tên</h4>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hoTen)
+    </div>
+
+    <div class="editor-label">
+         <h4>Chức danh</h4>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.chucDanh)
+    </div>
+
+    <div class="editor-label">
+         <h4>Chuyên ngành</h4>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.chuyenNganh)
+    </div>
+
+    <div class="editor-label">
+         <h4>Đơn vị</h4>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.donVi)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

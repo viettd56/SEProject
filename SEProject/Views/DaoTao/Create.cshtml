@@ -1,0 +1,51 @@
+﻿@model SEProject.Models.DaoTao
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DaoTao</legend>
+
+        <div class="editor-label">
+            <h4>Môn học</h4>
+        </div>
+        <p>@Html.DropDownList("tenMonHoc", (SelectList)ViewBag.listMonHoc)</p>
+
+        <div class="editor-label">
+           <h4>Giảng viên</h4>
+        </div>
+        <p>@Html.DropDownList("tenGiangVien",(SelectList)ViewBag.listGiangVien)</p>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.khoaHoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.khoaHoc)
+            @Html.ValidationMessageFor(model => model.khoaHoc)
+        </div>
+
+        <div class="editor-label">
+           <h4>Giảng viên</h4>
+        </div>
+        <p>@Html.DropDownList("nganhHoc",(SelectList)ViewBag.listNganhHoc)</p>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

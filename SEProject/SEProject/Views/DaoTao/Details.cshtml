@@ -1,43 +1,43 @@
 ﻿@model SEProject.Models.DaoTao
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết</h2>
 
 <fieldset>
     <legend>DaoTao</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.tenMonHoc)
+         <h4>Môn học</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.tenMonHoc)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.tenGiangVien)
+         <h4>Giảng viên</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.tenGiangVien)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.khoaHoc)
+         <h4>Khóa</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.khoaHoc)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.nganhHoc)
+         <h4>Ngành</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.nganhHoc)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Quay lại danh sách", "Index")
 </p>

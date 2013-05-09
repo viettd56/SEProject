@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<SEProject.Models.DaoTao>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "tìm kiếm";
 }
 
-<h2>Index</h2>
+<h2>Tìm kiếm</h2>
 
 <p>
-    @Html.ActionLink("Tạo mới", "Create") |
-    @Html.ActionLink("Tìm kiếm","SearchDaoTao")
+    @Html.ActionLink("Tạo mới", "Create")
+    @using (Html.BeginForm()){    
+         <p> Ngành: @Html.DropDownList("listchuyenNganh", "All")    
+             Khóa: @Html.DropDownList("listkhoaHoc", "All")      Nhập tên môn học: @Html.TextBox("searchmh")
+         <input type="submit" value="Tìm kiếm" /></p> 
+        }
 </p>
 <table>
     <tr align = "center">
@@ -44,7 +47,7 @@
         <td>
             @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Chi tiết", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.ID })
+            @Html.ActionLink("Xoa", "Delete", new { id=item.ID })
         </td>
     </tr>
 }

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using SEProject.Models;
 
+
 namespace SEProject.Controllers
 {
     public class DaoTaoController : Controller
@@ -157,6 +158,41 @@ namespace SEProject.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        public ActionResult SearchDaoTao(string searchmh, string nganh, int? khoa)
+        {
+            var dsnganh = new List<string>();
+            var nganhQry = from d in db.daoTaos
+                           orderby d.nganhHoc
+                           select d.nganhHoc;
+            dsnganh.AddRange(nganhQry.Distinct());
+            ViewBag.listchuyenNganh = new SelectList(dsnganh);
+            
+            var dskhoa = new List<int>();
+            var khoaQry = from d in db.daoTaos
+                          orderby d.khoaHoc
+                          select d.khoaHoc;
+            dskhoa.AddRange(khoaQry.Distinct());
+            ViewBag.listkhoaHoc = new SelectList(dskhoa);
+            
+
+            var monhocs = from m in db.daoTaos
+                             select m;
+
+            if (!String.IsNullOrEmpty(searchmh))
+            {
+                monhocs = monhocs.Where(s => s.tenMonHoc.Contains(searchmh));
+            }
+
+            if (!String.IsNullOrEmpty(nganh))
+                return View(monhocs.Where(x => x.nganhHoc == nganh));
+            if (khoa != null)
+                return View(monhocs.Where(x => x.khoaHoc == khoa));
+            else
+            {
+                return View(monhocs);
+            }
         }
     }
 }

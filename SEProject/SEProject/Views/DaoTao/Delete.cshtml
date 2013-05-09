@@ -1,38 +1,38 @@
 ﻿@model SEProject.Models.DaoTao
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Xóa";
 }
 
-<h2>Delete</h2>
+<h2>Xóa</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Bạn có chắc muốn xóa?</h3>
 <fieldset>
     <legend>DaoTao</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.tenMonHoc)
+         <h4>Môn học</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.tenMonHoc)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.tenGiangVien)
+         <h4>Giảng viên</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.tenGiangVien)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.khoaHoc)
+         <h4>Khóa</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.khoaHoc)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.nganhHoc)
+         <h4>Ngành</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.nganhHoc)
@@ -41,7 +41,7 @@
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Xóa" /> |
+        @Html.ActionLink("Quay lại danh sách", "Index")
     </p>
 }

@@ -74,5 +74,18 @@ namespace SEProject.Tests.Controllers
 
             daoTaoControl.Delete(id);
         }
+
+        [TestMethod]
+        public void TestSearchDaoTao()
+        {
+            DaoTao dt = new DaoTao(nameMonHoc, nameGiangVien, khoa, nganh);
+            dt.ID = id;
+            var daoTaoControl = new DaoTaoController();
+            daoTaoControl._Create(dt);
+
+            var result = daoTaoControl.SearchDaoTao(nganh, khoa.ToString()) as ViewResult;
+            Assert.NotNull(result);
+            daoTaoControl.Delete(id);
+        }
     }
 }

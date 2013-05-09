@@ -160,33 +160,28 @@ namespace SEProject.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult SearchDaoTao(string nganh, int? khoa)
+        public ActionResult SearchDaoTao(string nganh, string nam)
         {
             var dsnganh = new List<string>();
             var nganhQry = from d in db.daoTaos
                            orderby d.nganhHoc
                            select d.nganhHoc;
             dsnganh.AddRange(nganhQry.Distinct());
-            ViewBag.listchuyenNganh = new SelectList(dsnganh);
+            ViewBag.listChuyenNganh = new SelectList(dsnganh);
             
             var dskhoa = new List<int>();
             var khoaQry = from d in db.daoTaos
                           orderby d.khoaHoc
                           select d.khoaHoc;
             dskhoa.AddRange(khoaQry.Distinct());
-            ViewBag.listkhoaHoc = new SelectList(dskhoa);
+            ViewBag.listKhoaHoc = new SelectList(dskhoa);
             
             var monhocs = from m in db.daoTaos
                              select m;
-
-            if (!String.IsNullOrEmpty(nganh))
-                return View(monhocs.Where(x => x.nganhHoc == nganh));
-            if (khoa != null)
-                return View(monhocs.Where(x => x.khoaHoc == khoa));
-            else
-            {
-                return View();
-            }
+            var listNganh = monhocs.Where(x => x.nganhHoc == nganh);
+            int intNam = Convert.ToInt32(nam);
+            var listNganhNam = listNganh.Where(x => x.khoaHoc == intNam);
+            return View(listNganhNam);
         }
     }
 }

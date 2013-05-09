@@ -61,7 +61,7 @@ namespace SEProject.Controllers
             var dsNganhHoc = new List<string>();
 
             dsNganhHoc.Add("Công nghệ thông tin");
-            dsNganhHoc.Add("Công nghệ thông tin CLC");
+            dsNganhHoc.Add("Khoa học máy tính");
             dsNganhHoc.Add("Hệ thống thông tin");
             dsNganhHoc.Add("Mạng máy tính");
             
@@ -160,7 +160,7 @@ namespace SEProject.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult SearchDaoTao(string searchmh, string nganh, int? khoa)
+        public ActionResult SearchDaoTao(string nganh, int? khoa)
         {
             var dsnganh = new List<string>();
             var nganhQry = from d in db.daoTaos
@@ -176,14 +176,8 @@ namespace SEProject.Controllers
             dskhoa.AddRange(khoaQry.Distinct());
             ViewBag.listkhoaHoc = new SelectList(dskhoa);
             
-
             var monhocs = from m in db.daoTaos
                              select m;
-
-            if (!String.IsNullOrEmpty(searchmh))
-            {
-                monhocs = monhocs.Where(s => s.tenMonHoc.Contains(searchmh));
-            }
 
             if (!String.IsNullOrEmpty(nganh))
                 return View(monhocs.Where(x => x.nganhHoc == nganh));
@@ -191,7 +185,7 @@ namespace SEProject.Controllers
                 return View(monhocs.Where(x => x.khoaHoc == khoa));
             else
             {
-                return View(monhocs);
+                return View();
             }
         }
     }
